@@ -1,0 +1,11 @@
+<configuration>
+    <input>
+        <net-file value="cleared.net.xml"/>
+        <route-files value="cleared.rou.xml"/>
+        <additional-files value="cleared.poly.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="100000"/>
+    </time>
+</configuration>
