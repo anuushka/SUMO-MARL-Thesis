@@ -1,4 +1,3 @@
-#rewards oorchilson
 import os
 import torch
 import numpy as np
@@ -6,7 +5,6 @@ import sumo_rl
 import random
 from dqn_agent import Agent
 from collections import deque
-import statistics
 
 def dqn(n_episodes=1500, max_t=1000, eps_start=1.0, eps_end=0.001, eps_decay=0.995):
     scores = []                        # episode болгоны оноог хадгалах
@@ -42,10 +40,10 @@ def dqn(n_episodes=1500, max_t=1000, eps_start=1.0, eps_end=0.001, eps_decay=0.9
 if __name__ == '__main__':
 
     alpha = 0.1
-    gamma = 0.995
+    gamma = 0.99
     decay = 1
-    runs = 100 #100000
-    simulation_time = 3600 # seconds 7200
+    runs = 100
+    simulation_time = 3600 # seconds
     eps_start=1.0
     eps_end=0.001
     eps_decay=0.95
@@ -66,50 +64,40 @@ if __name__ == '__main__':
         gamma=gamma,
         seed=10) for ts in env.agents}
     eps = eps_start
-    scores = []
-                           # episode болгоны оноог хадгалах
+    scores = []                        # episode болгоны оноог хадгалах
     scores_window = deque(maxlen=100)  # сүүлийн 100 оноо
     for run in range(1, runs+1):
         os.system('python experiments/randomTrips.py -n bagatoiruu/cleared.net.xml -r bagatoiruu/cleared.rou.xml -e %i -L --insertion-rate 5200'%random_trip_number)
         env._route = 'bagatoiruu/cleared.rou.xml'
         env.reset()
-        rewards = 0
-        alpha = 0.01
         score = 0.0
         for agent in env.agent_iter():
             s, r, done, info = env.last()
             if dqn_agents[agent].act is not None:
                 state = env.observe(agent)
-                action, curr_act = dqn_agents[agent].act(state, eps) if not done else None #oorchloh heregtei
-                if curr_act is not None:
-                    prev = dqn_agents[agent].prev_actions
-                    prev.append(curr_act)
-                    avg_act = sum(prev)/len(prev)
-                    action = np.argmax((avg_act * alpha) + curr_act) #oorchilson
+                action = dqn_agents[agent].act(state, eps) if not done else None
                 env.step(action)
                 next_state = np.array(env.observe(agent), dtype=np.float32)
-                reward = env.rewards[agent] + alpha*rewards #oorhcilson
-                rewards += reward
+                reward = env.rewards[agent]
                 done = env.dones[agent]
                 dqn_agents[agent].step(state, action, reward, next_state, done)
-                score += reward 
+                score += reward
                 # print(eps)
                 if done:
                     break
-        rewards = 0
         eps = max(eps_end, eps_decay*eps) #eps works ok
         scores_window.append(score)
         scores.append(score)
         eps = max(eps_end, eps_decay*eps)     
 
         print('\rEpisode {}\tAverage Score: {:.2f}'.format(
-            run, score), end="")
+            run, np.mean(scores_window)), end="")
         if run % 1 == 0:
             print('\rEpisode {}\tAverage Score: {:.2f}'.format(
-                run, score))
-        if score >= 0.01:
+                run, np.mean(scores_window)))
+        if np.mean(scores_window) >= 200.0:
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(
-                run-100, score))
+                run-100, np.mean(scores_window)))
             torch.save(dqn_agents[agent].qnetwork_local.state_dict(), 'checkpoint_'+agent+'.pth')
-        env.unwrapped.env.save_csv('outputs/1000/test1', run) #TODO check checkpoints
+        env.unwrapped.env.save_csv('outputs/dqn/test1', run) #TODO check checkpoints
         env.close()

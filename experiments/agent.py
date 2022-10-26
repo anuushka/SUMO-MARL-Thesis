@@ -125,8 +125,7 @@ class Agent():
         self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed)
         # хугацааг эхлүүлэх (мөн алхам бүрд хугацааг ахиулах)
         self.t_step = 0
-        #prev actions
-        self.prev_actions = deque(maxlen=10) 
+
     def step(self, state, action, reward, next_state, done):
         # үйлдэл бүрийг санах ойд хадгалах хэсэг
         self.memory.add(state, action, reward, next_state, done)
@@ -156,10 +155,10 @@ class Agent():
 
         # сурсан моделоос үйлдэл сонгох эсвэл санамсаргүй үйлдэл сонгох
         if random.random() > eps:
-            return np.argmax(action_values.cpu().data.numpy()), action_values.cpu().data.numpy()
+            return np.argmax(action_values.cpu().data.numpy())
         else:
             # санамсаргүй үйлдлийг үйлдлийн хүснэгтээс сонгох
-            return random.choice(range(self.action_size)), None
+            return random.choice(range(self.action_size))
 
     def learn(self, experiences, gamma):
         """өгөгдсөн туршлагад сургалт хийх.
