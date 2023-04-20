@@ -1,0 +1,64 @@
+SUmo traffic light - sumo gui
+hyazgaartai
+uulzar deer mashin toolno
+openstreetmap to sumo
+typemap
+gym environment
+sumo-rl lucasalegre (agent ni ajildaggui)
+
+python experiments/ql_4x4grid.py
+
+
+1. Q-learning : state action pair
+2. DQN
+3. RL
+
+
+Share: reward, action, state. 
+reward -- dundaj huleeh hugatsaa (sumo) ---> 
+1. DQN. Dictionary avna. Environment ni neg. Model ni olon dqn. Dundaj tomyogoo oruulna. reward, action. 3 layer. 
+action space. shape utga avna. shape--oorchilno. shape ni yamar yamar utga avah ve.
+2.Reward
+
+
+traffic = env.traffic_signals['2498087799']
+traffic.lanes
+print(traffic.lanes[0])
+
+
+
+python outputs/plot.py -f outputs\dqn\test1_conn0_run1.csv
+
+
+OUTPUT:
+action-oo bichij uguh yostoi 
+next_action = output
+replay buffer-aa sequence bolgoh yostoi
+
+
+pip uninstall gym and pip install gym==0.23
+cd desktop MUST Sumo experiments  
+dqn_tr --> Uurchlugui 
+dqntrain --> transformers 
+ql_4x4grid --> QL
+
+Хиймэл оюун ашиглан Бага тойруу орчмын замын хөдөлгөөнийг зохицуулах нь
+Бага тойруу замын хөдөлгөөнийг хийсвэр орчинд зохицуулах агент сургах  нь.
+
+
+
+Цаашид бодит өгөгдөлтэй болвол бэлэн сургасан модел болон симуляцийн орчиндоо бодит өгөгдлөө оруулж туршиж үзэх боломжтой.
+
+
+https://www.nvidia.com/en-us/glossary/data-science/pytorch/
+
+https://www.infoworld.com/article/3278008/what-is-tensorflow-the-machine-learning-library-explained.html
+
+https://towardsdatascience.com/getting-started-with-openai-gym-d2ac911f5cbc#:~:text=OpenAI%20gym%20is%20an%20environment%20for%20developing%20and%20testing%20learning,solver%20%2F%20other%20deep%20learning%20approaches.
+
+https://www.eclipse.org/mosaic/docs/simulators/traffic_simulator_sumo/#:~:text=Eclipse%20SUMO%20is%20a%20highly,and%20simulates%20each%20vehicle%20individually.
+
+https://markelsanz14.medium.com/introduction-to-reinforcement-learning-part-3-q-learning-with-neural-networks-algorithm-dqn-1e22ee928ecd
+
+https://towardsdatascience.com/welcome-to-deep-reinforcement-learning-part-1-dqn-c3cab4d41b6b
+
