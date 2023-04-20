@@ -20,11 +20,11 @@ import traci
 if __name__ == '__main__':
     ray.init()
 
-    register_env("4x4grid", lambda _: PettingZooEnv(sumo_rl.env(net_file='nets/4x4-Lucas/4x4.net.xml',
-                                                    route_file='nets/4x4-Lucas/4x4c1c2c1c2.rou.xml',
-                                                    out_csv_name='outputs/4x4grid/a3c',
-                                                    use_gui=False,
-                                                    num_seconds=80000)))
+    register_env("4x4grid", lambda _: PettingZooEnv(sumo_rl.env(net_file='bagatoiruu/cleared.net.xml',
+                                                    route_file='bagatoiruu/cleared.rou.xml',  
+                                                    out_csv_name='outputs/a3c/test1',
+                                                    use_gui=True,
+                                                    num_seconds=1000)))
 
     trainer = A3CTrainer(env="4x4grid", config={
         "multiagent": {

@@ -15,6 +15,30 @@ if 'SUMO_HOME' in os.environ:
 else:
     sys.exit("Please declare the environment variable 'SUMO_HOME'")
 
+class Transformer_model(nn.Module):
+    def __init__(self, state_size, action_size, device):
+        super(Transformer_model, self).__init__()
+        self.state_size = state_size
+        self.action_size = action_size
+        self.device = device
+        self.fc = nn.Linear(self.state_size,self.action_size)
+        self.transM = nn.Transformer(d_model=self.state_size, nhead=self.state_size*2, num_decoder_layers=2, num_encoder_layers=2, batch_first=True)
+    def forward(self, state, out):
+        out = torch.matmul(out - self.fc.bias, self.fc.weight)
+        state_sz = state.shape[1]
+        tgt_sz = state_sz
+        src_mask = self.transM.generate_square_subsequent_mask(state_sz)
+        tgt_mask = self.transM.generate_square_subsequent_mask(tgt_sz)
+        x = self.transM.forward(state, out,src_mask=src_mask, tgt_mask=tgt_mask)
+        x = self.fc(x)
+        return x
+        
+# model = Transformer_model(4,2, device='cpu')
+# in_data = torch.rand(2,10,4)
+# out_data = torch.rand(2,10,2)
+# print(in_data.shape, out_data.shape)
+# out = model(in_data, out_data)
+# print(out.shape)
 
 class Net(nn.Module):
     def __init__(self, state_size, action_size):
@@ -59,9 +83,23 @@ class ReplayBuffer:
 
     def add(self, state, action, reward, next_state, done):
         """Add a new experience to memory."""
-        e = self.experience(state, action, reward, next_state, done)
-        self.memory.append(e)
-
+        if i == self.sequence and i==0:
+            states = []
+            actions = []
+            rewards = []
+            n_states = []
+            dones = []
+            i=0
+            e = self.experience(states, actions, rewards, n_states, dones)
+            self.memory.append(e)
+        else:
+            states.append(state)
+            actions.append(action)
+            rewards.append(reward)
+            n_states.append(next_state)
+            dones.append(done)
+            i = i + 1
+            
     def sample(self):
         """Randomly sample a batch of experiences from memory."""
         experiences = random.sample(self.memory, k=self.batch_size)
@@ -125,8 +163,9 @@ class Agent():
         self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed)
         # хугацааг эхлүүлэх (мөн алхам бүрд хугацааг ахиулах)
         self.t_step = 0
-        #prev actions
         self.prev_actions = deque(maxlen=10) 
+
+
     def step(self, state, action, reward, next_state, done):
         # үйлдэл бүрийг санах ойд хадгалах хэсэг
         self.memory.add(state, action, reward, next_state, done)

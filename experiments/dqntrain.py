@@ -80,6 +80,7 @@ if __name__ == '__main__':
             s, r, done, info = env.last()
             if dqn_agents[agent].act is not None:
                 state = env.observe(agent)
+                print(dqn_agents[agent])
                 action, curr_act = dqn_agents[agent].act(state, eps) if not done else None #oorchloh heregtei
                 if curr_act is not None:
                     prev = dqn_agents[agent].prev_actions

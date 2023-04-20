@@ -19,13 +19,13 @@ if __name__ == '__main__':
     alpha = 0.1
     gamma = 0.99
     decay = 1
-    runs = 4
+    runs = 200
 
-    env = SumoEnvironment(net_file='nets/4x4-Lucas/4x4.net.xml',
-                          route_file='nets/4x4-Lucas/4x4c1c2c1c2.rou.xml',
-                          use_gui=False,
-                          num_seconds=80000,
-                          min_green=5,
+    env = SumoEnvironment(net_file='bagatoiruu/cleared.net.xml',
+                          route_file='bagatoiruu/cleared.rou.xml',
+                          use_gui=True,
+                          num_seconds=1000,
+                          min_green=8,
                           delta_time=5)
 
     initial_states = env.reset()
@@ -51,7 +51,7 @@ if __name__ == '__main__':
             for agent_id in s.keys():
                 ql_agents[agent_id].learn(next_state=env.encode(s[agent_id], agent_id), reward=r[agent_id])
 
-        env.save_csv('outputs/4x4/ql-4x4grid', run)
+        env.save_csv('outputs/ql/test1', run)
         env.close()
 
 
