@@ -188,7 +188,8 @@ If you use this repository in your research, please cite:
     journal = {GitHub repository},
     howpublished = {\url{https://github.com/LucasAlegre/sumo-rl}},
 }
-
+```
+```bibtex
 @misc{sumorl-DQN,
     author = {Anujin Baatartsogt},
     title = {{SUMO-RL-DQN}},
@@ -198,6 +199,7 @@ If you use this repository in your research, please cite:
     howpublished = {\url{https://github.com/anuushka/SUMO-MARL-Thesis}},
 }
 ```
+
 
 List of publications using SUMO-RL (please open a pull request to add missing entries):
 - [Quantifying the impact of non-stationarity in reinforcement learning-based traffic signal control (Alegre et al., 2021)](https://peerj.com/articles/cs-575/)
