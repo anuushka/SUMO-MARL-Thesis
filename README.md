@@ -188,6 +188,15 @@ If you use this repository in your research, please cite:
     journal = {GitHub repository},
     howpublished = {\url{https://github.com/LucasAlegre/sumo-rl}},
 }
+
+@misc{sumorl-DQN,
+    author = {Anujin Baatartsogt},
+    title = {{SUMO-RL-DQN}},
+    year = {2025},
+    publisher = {GitHub},
+    journal = {GitHub repository},
+    howpublished = {\url{https://github.com/anuushka/SUMO-MARL-Thesis}},
+}
 ```
 
 List of publications using SUMO-RL (please open a pull request to add missing entries):
