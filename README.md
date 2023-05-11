@@ -167,7 +167,7 @@ python experiments/ql_4x4grid.py
 
 ### Plotting results:
 ```bash
-python outputs/plot.py -f outputs/2way-single-intersection/a3c 
+python outputs/plot.py -f outputs\dqn\test1_conn0_run1400.csv
 ```
 <p align="center">
 <img src="outputs/DQN_TOTAL_WAITING_1400.png" align="center" width="50%"/>
