@@ -170,7 +170,7 @@ python experiments/ql_4x4grid.py
 python outputs/plot.py -f outputs/2way-single-intersection/a3c 
 ```
 <p align="center">
-<img src="outputs/result.png" align="center" width="50%"/>
+<img src="outputs/DQN_TOTAL_WAITING_1400.png" align="center" width="50%"/>
 </p>
 
 ## Citing
