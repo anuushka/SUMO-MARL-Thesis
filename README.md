@@ -102,7 +102,7 @@ env = SumoEnvironment(..., reward_fn=my_reward_fn)
 
 ## Examples
 
-Please see [SumoEnvironment docstring](https://github.com/LucasAlegre/sumo-rl/blob/master/sumo_rl/environment/env.py) for details on all constructor parameters.
+Please see [SumoEnvironment docstring](https://github.com/anuushka/SUMO-MARL-Thesis/blob/May-4-2023/sumo_rl/environment/env.py) for details on all constructor parameters.
 
 ### Single Agent Environment
 
@@ -154,19 +154,15 @@ Hence, only the tabular Q-learning experiment is running without erros for now.
 
 Check [experiments](https://github.com/LucasAlegre/sumo-rl/tree/master/experiments) for examples on how to instantiate an environment and train your RL agent.
 
-### [Q-learning](https://github.com/LucasAlegre/sumo-rl/blob/master/agents/ql_agent.py) in a one-way single intersection:
+
+### [DQN](https://github.com/anuushka/SUMO-MARL-Thesis/blob/May-4-2023/experiments/dqn_tr.py) in Baga Toiruu region of Ulaanbaatar with 11 intersections:
 ```bash
-python experiments/ql_single-intersection.py 
+python experiments/dqn_tr.py
 ```
 
-### [RLlib A3C](https://github.com/ray-project/ray/tree/master/python/ray/rllib/agents/a3c) multiagent in a 4x4 grid:
+### [Q learning](https://github.com/anuushka/SUMO-MARL-Thesis/blob/May-4-2023/experiments/ql_4x4grid.py) in Baga Toiruu region of Ulaanbaatar with 11 intersections:
 ```bash
-python experiments/a3c_4x4grid.py
-```
-
-### [stable-baselines3 DQN](https://github.com/DLR-RM/stable-baselines3/blob/master/stable_baselines3/dqn/dqn.py) in a 2-way single intersection:
-```bash
-python experiments/dqn_2way-single-intersection.py
+python experiments/ql_4x4grid.py
 ```
 
 ### Plotting results:
