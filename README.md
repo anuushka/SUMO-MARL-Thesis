@@ -171,10 +171,10 @@ python experiments/dqn_2way-single-intersection.py
 
 ### Plotting results:
 ```bash
-python outputs/plot.py -f outputs/2way-single-intersection/a3c 
+python outputs/plot.py -f outputs\dqn_tr\test1_conn0_run1.csv
 ```
 <p align="center">
-<img src="outputs/result.png" align="center" width="50%"/>
+<img src="outputs/DQN_TOTAL_WAITING_1400.png" align="center" width="50%"/>
 </p>
 
 ## Citing
