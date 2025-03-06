@@ -2,7 +2,9 @@
 The Research uses multi-agent reinforcement learning for traffic signal control in Baga Toiruu region of Ulaanbaatar, Mongolia. The experiment is conducted on SUMO simulation, an open source simulation program for traffic signal control.
 
 **Observation video**
+
 episode 300: https://www.youtube.com/watch?v=luAPwfOJBPk
+
 episode 1072: https://www.youtube.com/watch?v=mG21T8qHA5E
 
 <img src="outputs/logo.png" align="right" width="30%"/>
