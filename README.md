@@ -2,7 +2,7 @@
 
 **Should you utilize this research work in your own studies or publications, it is required that my name also be included as a contributor or author in accordance with proper attribution.** 
 
-The Research uses multi-agent reinforcement learning (AI) for traffic signal control in Baga Toiruu region of Ulaanbaatar, Mongolia. The experiment is conducted on SUMO simulation, an open source simulation program for traffic signal control. In the future, it is required to collect more data of our traffic flow of Baga toiruu region, Ulaanbaatar. We must also utilize Transformer model for training in the future.
+The Research uses multi-agent reinforcement learning (AI) for traffic signal control in Baga Toiruu region of Ulaanbaatar, Mongolia. The experiment is conducted on SUMO simulation, an open source simulation program for traffic signal control.The model incorporates DQN and QL algorithms, with the neural network being trained. In the future, it is required to collect more data of our traffic flow of Baga toiruu region, Ulaanbaatar. We must also utilize Transformer model for training in the future.
 
 **Observation video (Model training)**
 
