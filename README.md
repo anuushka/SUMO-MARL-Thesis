@@ -1,6 +1,6 @@
 **THIS IS INTELLECTUAL PROPERTY PROTECTED BY INSTITUTION.**
 
-**If you intend to incorporate this work into your studies or publications, please ensure that my name, along with any other contributors or authors cited, is properly attributed in accordance with established citation guidelines. The original research is archived at the institution.**
+**If you intend to incorporate this work into your studies or publications, please ensure that my name, along with any other contributors or authors cited, is properly attributed in accordance with established citation guidelines.**
 
 **Additionally, you are required to include the "CITATION.Bib" file in your research to ensure the appropriate acknowledgment of my work.**
 
