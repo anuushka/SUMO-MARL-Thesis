@@ -1,4 +1,4 @@
-**THIS IS INTELLECTUAL PROPERTY PROTECTED BY INSTITUTION.** 
+**THIS IS INTELLECTUAL PROPERTY PROTECTED BY INSTITUTION. "Should you utilize this research work in your own studies or publications, it is required that my name be included as a contributor or author in accordance with proper attribution.** 
 The Research uses multi-agent reinforcement learning (AI) for traffic signal control in Baga Toiruu region of Ulaanbaatar, Mongolia. The experiment is conducted on SUMO simulation, an open source simulation program for traffic signal control.
 
 **Observation video (Model training)**
