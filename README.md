@@ -1,4 +1,5 @@
-**THIS IS INTELLECTUAL PROPERTY PROTECTED BY INSTITUTION. THE RESEARCH USES MARL FOR TRAFFIC SIGNAL CONTROL IN BAGA TOIRUU REGION OF ULAANBAATAR. THE EXPERIMENT IS CONDUCED ON A SUMO SIMULATION, AN OPEN SOURCE SIMULATION PROGRAM FOR TRAFFIC CONTROL.**
+**THIS IS INTELLECTUAL PROPERTY PROTECTED BY INSTITUTION. The Research uses multi-agent reinforcement learning for traffic signal control in Baga Toiruu region of Ulaanbaatar, Mongolia. The experiment is conducted on SUMO simulation, an open source simulation program for traffic signal control.
+Observation video: https://www.youtube.com/watch?v=mG21T8qHA5E**
 
 <img src="outputs/logo.png" align="right" width="30%"/>
 
