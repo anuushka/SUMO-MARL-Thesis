@@ -1,3 +1,6 @@
+**THIS IS INTELLECTUAL PROPERTY PROTECTED BY THE UNIVERSITY. 
+**
+
 <img src="outputs/logo.png" align="right" width="30%"/>
 
 [![tests](https://github.com/LucasAlegre/sumo-rl/actions/workflows/linux-test.yml/badge.svg)](https://github.com/LucasAlegre/sumo-rl/actions/workflows/linux-test.yml)
