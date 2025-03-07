@@ -166,17 +166,6 @@ Hence, only the tabular Q-learning experiment is running without erros for now.
 
 Check [experiments](https://github.com/LucasAlegre/sumo-rl/tree/master/experiments) for examples on how to instantiate an environment and train your RL agent.
 
-
-### [DQN](https://github.com/anuushka/SUMO-MARL-Thesis/blob/May-4-2023/experiments/dqn_tr.py) in Baga Toiruu region of Ulaanbaatar with 11 intersections:
-```bash
-python experiments/dqn_tr.py
-```
-
-### [Q learning](https://github.com/anuushka/SUMO-MARL-Thesis/blob/May-4-2023/experiments/ql_4x4grid.py) in Baga Toiruu region of Ulaanbaatar with 11 intersections:
-```bash
-python experiments/ql_4x4grid.py
-```
-
 ### Plotting results:
 ```bash
 python outputs/plot.py -f outputs\dqn\test1_conn0_run1400.csv
