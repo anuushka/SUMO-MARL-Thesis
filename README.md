@@ -166,14 +166,6 @@ Hence, only the tabular Q-learning experiment is running without erros for now.
 
 Check [experiments](https://github.com/LucasAlegre/sumo-rl/tree/master/experiments) for examples on how to instantiate an environment and train your RL agent.
 
-### Plotting results:
-```bash
-python outputs/plot.py -f outputs\dqn\test1_conn0_run1400.csv
-```
-<p align="center">
-<img src="outputs/DQN_TOTAL_WAITING_1400.png" align="center" width="50%"/>
-</p>
-
 ## Citing
 If you use this repository in your research, please cite:
 ```bibtex
